@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-услуги и автоматизация бизнеса в Алматы | ABITECH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">
+                <img src="assets/logo.png" alt="ABITECH Logo">
+            </a>
+
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="#">Главная</a></li>
+                <li class="dropdown">
+                    <a href="#products">Продукты <i class="ph ph-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products/mobile-toir.html">Мобильный ТОиР</a></li>
+                        <li><a href="products/rfid.html">RFID-решения</a></li>
+                        <li><a href="products/ppe.html">Учёт спецодежды</a></li>
+                        <li><a href="products/ai-connector.html">ИИ-коннектор</a></li>
+                        <li><a href="products/wms.html">WMS</a></li>
+                        <li><a href="products/bi.html">BI-решения</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#industries">Отрасли <i class="ph ph-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="industries/oil-gas.html">Нефтегаз</a></li>
+                        <li><a href="industries/mining.html">Угольная пром.</a></li>
+                        <li><a href="industries/metallurgy.html">Металлургия</a></li>
+                        <li><a href="industries/logistics.html">Логистика</a></li>
+                        <li><a href="industries/energy.html">Энергетика</a></li>
+                    </ul>
+                </li>
+                <li><a href="./cases/energy-toir.html">Кейсы</a></li>
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-enhancer">Превращаем хаос в управляемую систему</div>
+            <h1>Цифровая автоматизация бизнеса и производства</h1>
+            <p class="hero-subtitle">Разработка ПО, внедрение WMS и комплексная автоматизация предприятий в Казахстане. Опыт более 20 лет</p>
+            <div class="hero-buttons">
+                <a href="#contacts" class="btn btn-primary">Начать цифровизацию</a>
+                <a href="#contacts" class="btn btn-secondary">Рассчитать стоимость</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Скролл вниз</span>
+            <i class="ph ph-arrow-down"></i>
+        </div>
+    </header>
+
+    <!-- Industries Section -->
+    <section class="section industries" id="industries">
+        <div class="container">
+            <h2 class="section-title">Отрасли / Кому мы помогаем</h2>
+            <div class="grid-5">
+                <!-- Card 1: Oil & Gas -->
+                <div class="card industry-card">
+                    <div class="card-icon"><i class="ph ph-drop"></i></div>
+                    <h3>Нефтегаз</h3>
+                    <p class="pain">Потери и отсутствие прозрачного учёта</p>
+                    <p class="solution">RFID-маркировка и цифровой учёт</p>
+                    <a href="industries/oil-gas.html" class="card-cta">Подробнее <i class="ph ph-arrow-right"></i></a>
+                </div>
+                <!-- Card 2: Coal -->
+                <div class="card industry-card">
+                    <div class="card-icon"><i class="ph ph-mountains"></i></div>
+                    <h3>Угольная промышленность</h3>
+                    <p class="pain">Сложность контроля перемещения техники</p>
+                    <p class="solution">RFID-учёт и отслеживание активов</p>
+                    <a href="industries/mining.html" class="card-cta">Подробнее <i class="ph ph-arrow-right"></i></a>
+                </div>
+                <!-- Card 3: Metallurgy -->
+                <div class="card industry-card">
+                    <div class="card-icon"><i class="ph ph-factory"></i></div>
+                    <h3>Металлургия</h3>
+                    <p class="pain">Разрозненные производственные данные</p>
+                    <p class="solution">Интеграция систем и ИИ-аналитика</p>
+                    <a href="industries/metallurgy.html" class="card-cta">Подробнее <i class="ph ph-arrow-right"></i></a>
+                </div>
+                <!-- Card 4: Logistics -->
+                <div class="card industry-card">
+                    <div class="card-icon"><i class="ph ph-truck"></i></div>
+                    <h3>Логистика</h3>
+                    <p class="pain">Ошибки и потери на складе</p>
+                    <p class="solution">Внедрение WMS и IoT-контроль</p>
+                    <a href="industries/logistics.html" class="card-cta">Подробнее <i class="ph ph-arrow-right"></i></a>
+                </div>
+                <!-- Card 5: Energy -->
+                <div class="card industry-card">
+                    <div class="card-icon"><i class="ph ph-lightning"></i></div>
+                    <h3>Энергетика</h3>
+                    <p class="pain">Простои из-за непредсказуемых поломок</p>
+                    <p class="solution">Предиктивная аналитика и мониторинг</p>
+                    <a href="industries/energy.html" class="card-cta">Подробнее <i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products" id="products">
+        <div class="container">
+            <h2 class="section-title">Продукты</h2>
+            <div class="grid-3">
+                <!-- Product 1: Mobile MRO -->
+                <div class="card product-card">
+                    <i class="ph ph-wrench" style="font-size: 40px; color: var(--primary); margin-bottom: 16px;"></i>
+                    <h3>Мобильный ТОиР</h3>
+                    <p>Цифровое управление обслуживанием оборудования</p>
+                    <a href="products/mobile-toir.html" class="btn-link">Подробнее</a>
+                </div>
+                <!-- Product 2: RFID -->
+                <div class="card product-card">
+                    <i class="ph ph-broadcast" style="font-size: 40px; color: var(--primary); margin-bottom: 16px;"></i>
+                    <h3>RFID-решения</h3>
+                    <p>Учёт активов, оборудования и спецодежды</p>
+                    <a href="products/rfid.html" class="btn-link">Подробнее</a>
+                </div>
+                <!-- Product 3: PPE -->
+                <div class="card product-card">
+                    <i class="ph ph-shield-check" style="font-size: 40px; color: var(--primary); margin-bottom: 16px;"></i>
+                    <h3>Учёт спецодежды</h3>
+                    <p>Контроль выдачи и сроков эксплуатации СИЗ</p>
+                    <a href="products/ppe.html" class="btn-link">Подробнее</a>
+                </div>
+                <!-- Product 4: AI Connector -->
+                <div class="card product-card">
+                    <i class="ph ph-plugs-connected" style="font-size: 40px; color: var(--primary); margin-bottom: 16px;"></i>
+                    <h3>ИИ-коннектор</h3>
+                    <p>Интеграция и обмен данными между системами</p>
+                    <a href="products/ai-connector.html" class="btn-link">Подробнее</a>
+                </div>
+                <!-- Product 5: WMS -->
+                <div class="card product-card">
+                    <i class="ph ph-warehouse" style="font-size: 40px; color: var(--primary); margin-bottom: 16px;"></i>
+                    <h3>WMS</h3>
+                    <p>Автоматизация складских процессов</p>
+                    <a href="products/wms.html" class="btn-link">Подробнее</a>
+                </div>
+                <!-- Product 6: BI -->
+                <div class="card product-card">
+                    <i class="ph ph-chart-bar" style="font-size: 40px; color: var(--primary); margin-bottom: 16px;"></i>
+                    <h3>BI-решения</h3>
+                    <p>Контроль материальных потоков и данных</p>
+                    <a href="products/bi.html" class="btn-link">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section class="section cases" id="cases">
+        <div class="container">
+            <h2 class="section-title">Кейсы и результаты</h2>
+            <div class="grid-3">
+                <div class="card case-card">
+                    <div class="case-stat">15%</div>
+                    <p class="case-desc">↓ потери</p>
+                    <a href="cases/energy-toir.html" class="btn-outline">Смотреть</a>
+                </div>
+                <div class="card case-card">
+                    <div class="case-stat">30%</div>
+                    <p class="case-desc">↓ время</p>
+                    <a href="cases/energy-toir.html" class="btn-outline">Смотреть</a>
+                </div>
+                <div class="card case-card">
+                    <div class="case-stat">100%</div>
+                    <p class="case-desc">Полная прозрачность</p>
+                    <a href="cases/energy-toir.html" class="btn-outline">Смотреть</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="section why-us" id="about">
+        <div class="container">
+            <h2 class="section-title">Почему ABITECH</h2>
+            <div class="grid-3" style="margin-top: 40px;">
+                <div class="card why-card">
+                    <i class="ph ph-hourglass-high card-icon-primary"></i>
+                    <h3>20+ лет на рынке</h3>
+                    <p>Мы не стартап-однодневка. Пережили кризисы, накопили огромную базу знаний и понимаем специфику
+                        казахстанского бизнеса как никто другой.</p>
+                </div>
+                <div class="card why-card">
+                    <i class="ph ph-code card-icon-primary"></i>
+                    <h3>Собственная разработка</h3>
+                    <p>Не просто перепродаем чужой софт. У нас сильная команда инженеров, готовая адаптировать любое
+                        решение под ваши уникальные процессы.</p>
+                </div>
+                <div class="card why-card">
+                    <i class="ph ph-plugs card-icon-primary"></i>
+                    <h3>Реальные интеграции</h3>
+                    <p>Заставляем 1С, ERP, SAP и "железо" работать как единый организм. Никаких изолированных систем и
+                        дублирования данных.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="about.html" class="btn btn-secondary">Подробнее о компании</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="section technologies">
+        <div class="container">
+            <h2 class="section-title">Технологии и интеграции</h2>
+            <p class="section-subtitle">Интеграции, которые делают процессы прозрачными</p>
+            <div class="flex-center technologies-grid">
+                <div class="tech-logo">1С</div>
+                <div class="tech-logo">ERP</div>
+                <div class="tech-logo">BI</div>
+                <div class="tech-logo">RFID</div>
+                <div class="tech-logo">IoT</div>
+                <div class="tech-logo">AI</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnets Section -->
+    <section class="section lead-magnets">
+        <div class="container">
+            <h2 class="section-title">Полезные материалы</h2>
+            <div class="grid-3">
+                <div class="card magnet-card">
+                    <h3>Чек-лист ТОиР</h3>
+                    <button class="btn-magnet">Получить</button>
+                </div>
+                <div class="card magnet-card">
+                    <h3>Опрос спецодежды</h3>
+                    <button class="btn-magnet">Получить</button>
+                </div>
+                <div class="card magnet-card">
+                    <h3>Предвар. оценка</h3>
+                    <button class="btn-magnet">Получить</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contacts">
+        <div class="container">
+            <h2 class="section-title">Оставьте заявку</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Имя" required>
+                <input type="text" placeholder="Компания" required>
+                <input type="tel" placeholder="Телефон" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Кратко задача">
+                <button type="submit" class="btn btn-primary full-width">Обсудить проект</button>
+            </form>
+            <div class="contact-links">
+                <a href="#">Телефон</a>
+                <a href="#">Email</a>
+                <a href="#">WhatsApp</a>
+                <a href="#">Telegram</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

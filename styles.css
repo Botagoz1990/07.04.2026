@@ -1,0 +1,943 @@
+/* Global Styles */
+:root {
+    --primary: #1E3D37;
+    /* Brand Green: Te Papa Green */
+    --primary-hover: #162E2A;
+    --accent: #FBC02D;
+    /* Brand Yellow */
+    --secondary: #ffffff;
+    --text-dark: #1A1A1A;
+    --text-gray: #666666;
+    --bg-light: #F5F7FA;
+    --white: #ffffff;
+    --radius: 8px;
+    --font-main: 'Montserrat', sans-serif;
+    --font-heading: 'Proxima Nova', sans-serif;
+    --bg-gradient-green: linear-gradient(180deg, #F0F4F3 0%, #FFFFFF 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    /* 90px header + 10px buffer */
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    background-color: var(--white);
+    line-height: 1.5;
+    padding-top: 130px;
+    /* Prevent content from being hidden under fixed header */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    margin-top: -32px;
+    margin-bottom: 48px;
+}
+
+/* Navigation */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    height: 130px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    background-color: transparent; /* As requested */
+    border: none;
+    padding: 0;
+}
+
+.nav-logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+    background-color: transparent; /* As requested */
+    border: none;
+    padding: 0;
+    mix-blend-mode: multiply; /* Keep for now as it handles the white background of the image */
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    list-style: none;
+    flex-direction: column;
+    gap: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--text-dark);
+    transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background: var(--bg-light);
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    background: url('assets/hero-bg.png') no-repeat center center/cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 61, 55, 0.85);
+    /* Te Papa Green overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-enhancer {
+    display: inline-block;
+    background: rgba(251, 192, 45, 0.2); /* Accent yellow with transparency */
+    color: var(--accent);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(251, 192, 45, 0.3);
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    /* Request: 24px */
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    /* Request: 32px */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+    font-size: 16px;
+    text-decoration: none; /* For link buttons */
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Industries Section */
+.industries {
+    background-color: var(--bg-light);
+    /* Request: #F5F7FA */
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    justify-content: center;
+}
+
+.grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px; /* Slightly reduced gap for better fit */
+    justify-content: center;
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    /* Request: 8px */
+    padding: 24px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.industry-card {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-icon {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.industry-card h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.pain {
+    font-size: 14px;
+    color: #cc0000;
+}
+
+.solution {
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.card-cta {
+    font-size: 14px;
+    color: var(--primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: auto;
+}
+
+/* Products Section */
+.products {
+    background: var(--bg-gradient-green);
+}
+
+.product-card {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.product-card h3 {
+    margin-bottom: 12px;
+}
+
+.product-card p {
+    color: var(--text-gray);
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.btn-link {
+    background: none;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-link:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Cases Section */
+.cases {
+    background-color: var(--bg-light);
+    /* Request: #F5F7FA */
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    /* Request: 24px */
+    justify-content: center;
+}
+
+.case-card {
+    width: 300px;
+    /* Request: 300px */
+    height: 180px;
+    /* Request: 180px */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.case-stat {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.case-desc {
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--text-dark);
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-outline:hover {
+    background: var(--text-dark);
+    color: var(--white);
+}
+
+/* Why Us Section */
+.why-us {
+    background: var(--bg-gradient-green);
+    margin-top: 80px;
+    /* Request: 80px */
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    /* Request: 24px */
+}
+
+.why-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+}
+
+.why-item i {
+    font-size: 48px;
+    /* Request: 48px */
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+/* Technologies Section */
+.technologies {
+    background: var(--bg-gradient-green);
+    margin-top: 80px;
+    /* Request: 80px */
+}
+
+.technologies-grid {
+    gap: 24px;
+}
+
+.tech-logo {
+    width: 64px;
+    /* Request: 64px */
+    height: 64px;
+    /* Request: 64px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+/* Lead Magnets Section */
+.lead-magnets {
+    background: var(--bg-gradient-green);
+    padding-top: 40px;
+}
+
+.magnet-card {
+    width: 240px;
+    /* Request: 240px */
+    height: 120px;
+    /* Request: 120px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--bg-light);
+}
+
+.btn-magnet {
+    margin-top: 12px;
+    background: var(--accent);
+    color: var(--text-dark);
+    font-weight: 600;
+    border: none;
+    padding: 6px 16px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--bg-light);
+    margin-top: 80px;
+    /* Request: 80px */
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.contact-form {
+    width: 400px;
+    /* Request: 400px */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--white);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    /* Request: 8px */
+    font-size: 16px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.contact-links {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.contact-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-links a:hover {
+    color: var(--primary);
+}
+
+/* Mobile MRO Page Styles */
+.hero-mro {
+    background: url('assets/mro-hero.png') no-repeat center center/cover;
+}
+
+.hero-ppe {
+    background: url('assets/ppe-hero.png') no-repeat center center/cover;
+}
+
+.hero-ai {
+    background: url('assets/ai-hero.png') no-repeat center center/cover;
+}
+
+.hero-wms {
+    background: url('assets/wms-hero.png') no-repeat center center/cover;
+}
+
+.hero-energy {
+    background: url('assets/energy-hero.png') no-repeat center center/cover;
+}
+
+.hero-about {
+    background: url('assets/about-hero.png') no-repeat center center/cover;
+}
+
+.hero-contacts {
+    background: url('assets/contacts-hero.png') no-repeat center center/cover;
+}
+
+.hero-mining {
+    background: url('assets/mining-hero.png') no-repeat center center/cover;
+}
+
+.hero-logistics {
+    background: url('assets/logistics-hero.png') no-repeat center center/cover;
+}
+
+/* Problems Section (MRO) */
+.section-problems {
+    background: var(--bg-gradient-green);
+}
+
+.problem-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    height: 100%;
+}
+
+.problem-icon {
+    font-size: 48px;
+    color: #d32f2f;
+    /* Red for problems */
+    margin-bottom: 16px;
+}
+
+.problem-text {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Solution Section (MRO) */
+.section-solution {
+    background-color: var(--bg-light);
+}
+
+.solution-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.solution-icons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.solution-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 120px;
+}
+
+.solution-icon-circle {
+    width: 64px;
+    height: 64px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+.solution-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Functionality Section (MRO) */
+.func-card {
+    background: var(--white);
+    padding: 32px 24px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.func-card:hover {
+    transform: translateY(-5px);
+}
+
+.func-icon {
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: 24px;
+}
+
+/* Results Section (MRO) */
+.section-results {
+    background-color: var(--bg-light);
+}
+
+.result-card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: var(--radius);
+    text-align: center;
+    border: 2px solid var(--primary);
+}
+
+.result-kpi {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.result-label {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-dark);
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+
+    .grid-4,
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        /* top: 130px; if we want it below header, but usually full screen is better or below 80px */
+        /* Let's make it slide from side or drop down below header. 
+           Given the header is fixed and tall (130px), let's put it below or cover everything.
+           To cover everything cleanly, we might need top: 0 and z-index < logo z-index or handle spacing. 
+           Let's try fixed side menu.
+        */
+        top: 130px;
+        /* Below fixed header */
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        height: calc(100vh - 130px);
+        overflow-y: auto;
+        padding-bottom: 40px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 16px 0;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        /* JS or CSS Click could toggle this, or just show all for simplicity on mobile first */
+        background: var(--bg-light);
+        padding-left: 0;
+    }
+
+    /* Simple approach: Show dropdowns always on mobile or hover logic doesn't work well. 
+       Let's display them block so all links are visible or use focus-within. 
+       For now, let's make them visible always to ensure access. */
+    .dropdown .dropdown-menu {
+        display: flex;
+        background: #f9f9f9;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
+
+    .main-nav {
+        height: 100px;
+    }
+
+    .nav-logo img {
+        height: 70px;
+    }
+
+    .nav-menu {
+        top: 100px;
+        height: calc(100vh - 100px);
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
+
+    .section-subtitle {
+        margin-top: -24px;
+        margin-bottom: 32px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .grid-4,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        width: 100%;
+        padding: 24px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .technologies-grid {
+        gap: 16px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
